@@ -131,6 +131,9 @@ You can also set an id for each item by adding `id="idname"` to each `[accordion
 For bug reports or feature requests or if you'd like to contribute to the plugin you can check everything out on [Github](https://github.com/philbuchanan/Accordion-Shortcodes/).
 
 == Changelog ==
+= 1.4 =
+Added support for item IDs and direct links
+
 = 1.2.4 =
 * Compatibility with WordPress 3.9
 
