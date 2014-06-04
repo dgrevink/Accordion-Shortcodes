@@ -1,5 +1,5 @@
 === Accordion Shortcodes ===
-Contributors: philbuchanan, kambanwait
+Contributors: philbuchanan, kambanwait, dgrevink
 Author URI: http://philbuchanan.com/
 Donate Link: http://philbuchanan.com/
 Tags: accordion, accordions, shortcodes
