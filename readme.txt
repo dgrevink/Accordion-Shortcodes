@@ -4,8 +4,8 @@ Author URI: http://philbuchanan.com/
 Donate Link: http://philbuchanan.com/
 Tags: accordion, accordions, shortcodes
 Requires at least: 3.3
-Tested up to: 3.9
-Stable tag: 1.3
+Tested up to: 3.9.1
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,7 @@ Adds a few shortcodes to allow for accordion drop-downs.
 * Disable auto closing of accordion items (optional)
 * Manually close items by clicking the title again (optional)
 * Scroll page to title when it's clicked open (optional)
+* Specify ID in each accordion item so that they can be automatically opened via a link (optional)
 
 = The Shortcodes =
 
@@ -41,18 +42,18 @@ and
 = Basic Usage Example =
 
     [accordion]
-    [accordion-item title="Title of accordion item"]Drop-down content goes here.[/accordion-item]
-    [accordion-item title="Second accordion item"]Drop-down content goes here.[/accordion-item]
+    [accordion-item title="Title of accordion item" id="item1"]Drop-down content goes here.[/accordion-item]
+    [accordion-item title="Second accordion item" id="item2"]Drop-down content goes here.[/accordion-item]
     [/accordion]
 
 This will output the following HTML:
 
     <div class="accordion">
-        <h3 class="accordion-title">Title of accordion item</h3>
+        <h3 class="accordion-title" id="item1">Title of accordion item</h3>
         <div class="accordion-content">
             Drop-down content goes here.
         </div>
-        <h3 class="accordion-title">Second accordion item</h3>
+        <h3 class="accordion-title" id="item2">Second accordion item</h3>
         <div class="accordion-content">
             Drop-down content goes here.
         </div>
@@ -121,7 +122,9 @@ There are a few advanced settings you can add to the opening accordion shortcode
 
 **closebuttons**: Sets whether to show close buttons on accordion titles. Set `closebuttons="true/false"` on the opening accordion tag like this: `[accordion closebuttons="true"]`. You can also add custom close text by simply replacing `true` with the custom text you would like for the close button like this: `[accordion closebuttons="Close accordion"]`. Default is `false`.
 
-You can also set the HTML tag for the titles of each item by added `tag="tagname"` to each `[accordion-item]` shortcode. Make sure to **not** include the angle brackets around the tag name. Example: to use `<h2>` instead of the default `<h3>` tag: `[accordion-item title="Item title" tag="h2"]Item content[/accordion-item]`
+You can also set the HTML tag for the titles of each item by adding `tag="tagname"` to each `[accordion-item]` shortcode. Make sure to **not** include the angle brackets around the tag name. Example: to use `<h2>` instead of the default `<h3>` tag: `[accordion-item title="Item title" tag="h2"]Item content[/accordion-item]`
+
+You can also set an id for each item by adding `id="idname"` to each `[accordion-item]` shortcode. Then, if you want to have a page loaded with the accordion opened to a specific item, you can call it with a link like so: http://sitename/pagename/#idname for example.
 
 = Issues/Suggestions =
 
